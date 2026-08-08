@@ -1,0 +1,222 @@
+{
+  "template": "shared2",
+  "project_name": "Assetz 63° East",
+  "builder": "Assetz Property Group",
+  "tagline": "A premium, eco-luxury residential township",
+  "location_area": "",
+  "location_city": "",
+  "location_address": "Hoskote, Bengaluru",
+  "location_distances": [
+    "Whitefield → 20 mins",
+    "ITPL & Tech Parks → 25 mins",
+    "KR Puram → 20 mins",
+    "Outer Ring Road → 30 mins",
+    "Kempegowda International Airport → 35 mins"
+  ],
+  "maps_embed_url": "",
+  "maps_link": "https://maps.app.goo.gl/E5EW82ue21S53wKy5",
+  "lat": "13.057687",
+  "lng": "77.768082",
+  "phone": "+919739155677",
+  "whatsapp_phone": "919353329893",
+  "rera": "PRM/KA/RERA/1251/446/PR/201222/005546",
+  "rera1": "",
+  "rera2": "",
+  "rera3": "",
+  "rera4": "",
+  "rera5": "",
+  "rera6": "",
+  "rera7": "",
+  "features": [
+    {
+      "title": "Project Size",
+      "value": "26 Acres"
+    },
+    {
+      "title": "Possession",
+      "value": "Ready to Move Phased/Tower E under-construction extensions up to 2026"
+    },
+    {
+      "title": "Starting Price",
+      "value": "₹ 1.23 Cr*"
+    },
+    {
+      "title": "Configurations",
+      "value": "Studio, 1, 2, 3 & 4 BHK"
+    }
+  ],
+  "overview_title": "Assetz 63° East - A Landmark Township Redefining Luxury in East Bangalore",
+  "overview_body": "Discover a self-sustaining mega ecosystem spanning a massive 26-acre master plan thoughtfully engineered by the [Assetz Property Group](https://www.assetzproperty.com/63east/). This monumental sustainable township seamlessly integrates 6 soaring high-rise towers rising up to 14 floors alongside 79 premium luxury row houses. Envisioned to perfectly balance personal sanctuary with eco-responsibility, the community is built on an IGBC Gold Rated \"Carbon Healing Homes\" concept, dedicating 68% of its territory to expansive green landscapes, tranquil courtyard pockets, and over 25 world-class amenities. Experience architectural excellence through impeccably crafted 1, 2, 3, and 4 BHK smart homes situated right off Sarjapur Road in Kodathi, offering unmatched, traffic-free connectivity to major IT corridors like RGA Tech Park, the Wipro Corporate Campus, Outer Ring Road (ORR), and Marathahalli.",
+  "ai_assistant_name": "Mira",
+  "qa_pairs": [
+    {
+      "question": "Who is the developer of this project?",
+      "answer": "The developer of this project is Assetz Property Group."
+    },
+    {
+      "question": "What types of units are available in the newest tower phases, specifically Tower E?",
+      "answer": "The newest tower phases, including Tower E, offer ultra-premium, highly spatial 3 BHK and 4 BHK layouts."
+    },
+    {
+      "question": "Where is this project located?",
+      "answer": "The project is located at Chikkakannalli / Kodathi, directly off Sarjapur Main Road in East Bangalore."
+    },
+    {
+      "question": "What are some of the water management systems implemented in the development?",
+      "answer": "The development features dual plumbing lines, dual-flush sanitary fixtures, integrated rainwater harvesting, and groundwater recharging infrastructure, designed to save up to 74% fresh water."
+    },
+    {
+      "question": "What is the RERA registration number for Tower E?",
+      "answer": "The RERA registration number for Tower E Phase is PRM/KA/RERA/1251/446/PR/201222/005546."
+    },
+    {
+      "question": "What amenities are available in the clubhouse?",
+      "answer": "The 40,000 Sq.Ft. clubhouse features over 25 community and lifestyle assets, including 5 swimming pools, futsal fields, a tennis court, a basketball court, a skating rink, indoor squash courts, co-working areas, a child creche/daycare, an organic cultivation deck, and micro-retail bus bays."
+    },
+    {
+      "question": "How well is the project connected to employment centers?",
+      "answer": "The project has immediate driving alignment to RGA Tech Park, Outer Ring Road (ORR) IT corridors, Wipro Corporate HQ, and nearby Bellandur / Marathahalli IT corridors."
+    }
+  ],
+  "units": [
+    {
+      "type": "2 BHK",
+      "size": "1,022 – 1,159 Sq.Ft.",
+      "price": "₹ 1.23 Cr* onwards",
+      "floor_plan_image": "",
+      "label": "Growth Elite (2 BHK)",
+      "description": "A high-liquidity asset perfect for young tech professionals, maximizing rental demand and entry-level capital appreciation along the Sarjapur IT corridor."
+    },
+    {
+      "type": "3 BHK",
+      "size": "1,403 – 1,430 Sq.Ft",
+      "price": "₹ 1.27 Cr* onwards",
+      "floor_plan_image": "",
+      "label": "Premium Asset (3 BHK)",
+      "description": "The optimal sweet spot for mid-to-senior IT executives, balancing stable family-centric rental yields with strong long-term equity growth."
+    },
+    {
+      "type": "4 BHK",
+      "size": "2,410 Sq.Ft.",
+      "price": "₹ 2.16 Cr* onwards",
+      "floor_plan_image": "",
+      "label": "High-Yield Sovereign (4 BHK)",
+      "description": "An exclusive, low-density luxury suite designed for high-net-worth individuals, commanding premium rental rates and maximum wealth preservation."
+    }
+  ],
+  "amenities": [
+    "Swimming pool",
+    "Gymnasium",
+    "Aerobics",
+    "Table Tennis",
+    "Pool Table",
+    "Senior's Corner",
+    "Clubhouse",
+    "Kid's play area",
+    "Squash",
+    "Co-working space",
+    "Cricket"
+  ],
+  "hero_image": "https://firebasestorage.googleapis.com/v0/b/masal-502609.firebasestorage.app/o/assetz-63east%2Fhero_image-ai-95d7b6a6.webp?alt=media&token=8da22d2b-be50-4694-978e-e3d85c0b5d1f",
+  "logo_image": "https://firebasestorage.googleapis.com/v0/b/iqol-marketing.firebasestorage.app/o/catalogue%2FAssetz%2Flogo.png?alt=media&token=538faa88-bde2-4c51-9739-583458ebac90",
+  "overview_image": "https://firebasestorage.googleapis.com/v0/b/masal-502609.firebasestorage.app/o/assetz-63east%2Foverview_image-ai-d7fa3295.webp?alt=media&token=971dd5f1-7734-4864-9180-2c26abbf3217",
+  "master_plan_image": "https://firebasestorage.googleapis.com/v0/b/masal-502609.firebasestorage.app/o/assetz-63east%2Fmaster_plan_image-ai-d3ee823d.webp?alt=media&token=4ee67ba7-2196-4bde-b2fd-a78734a8ba66",
+  "favicon_image": "https://firebasestorage.googleapis.com/v0/b/iqol-marketing.firebasestorage.app/o/catalogue%2FAssetz%2Ffavicon.png?alt=media&token=69424c9e-fdef-4f4b-98c9-f8992b26421c",
+  "gallery_images": [
+    "https://firebasestorage.googleapis.com/v0/b/iqol-marketing.firebasestorage.app/o/catalogue%2FAssetz%2Fgallery1.png?alt=media&token=50a92f71-a625-4634-ae83-f681f5d91532",
+    "https://firebasestorage.googleapis.com/v0/b/iqol-marketing.firebasestorage.app/o/catalogue%2FAssetz%2Fgallery2.png?alt=media&token=45958256-218d-4111-9101-18cfd3be8c2c",
+    "https://firebasestorage.googleapis.com/v0/b/iqol-marketing.firebasestorage.app/o/catalogue%2FAssetz%2Fgallery3.png?alt=media&token=1ffc1785-309e-401d-b4ff-266ac7995ca7"
+  ],
+  "highlights_images": [],
+  "ga4_measurement_id": "",
+  "theme": {
+    "colors": {
+      "primary": "#2B2B2B",
+      "primaryDark": "#161616",
+      "secondary": "#8E8A84",
+      "ink": "#222222",
+      "surface": "#FCFBF8",
+      "surfaceSoft": "#F2F0EB",
+      "heroOverlay": "#121212"
+    }
+  },
+  "hero_badge": "Pre-Launch · Sadahalli",
+  "hero_headline": "Home of Positive Energy in North Bangalore.",
+  "hero_subtext": "Discover an eco-luxury sanctuary designed for sustainable living. Experience meticulously crafted 3 & 4 BHK smart homes surrounded by vast green open spaces, premium health amenities, and seamless connectivity to the Bengaluru Airport hub.",
+  "overview_eyebrow": "The Project",
+  "overview_heading": "North Bangalore's next landmark.",
+  "specs": [
+    {
+      "value": "68%",
+      "unit": "Open Space",
+      "label": "lush green landscape"
+    },
+    {
+      "value": "40,000",
+      "unit": "Sq.Ft.",
+      "label": "grand luxury clubhouse"
+    }
+  ],
+  "master_plan_heading": "A masterfully planned 26-acre sustainable enclave.",
+  "master_plan_subtext": "Intelligently positioned towers engineered to maximise pristine green views, cross-ventilation, and natural sunlight.",
+  "master_plan_body": "The master plan perfectly balances structural density with expansive breathing space, leaving an impressive 68% of the total acreage dedicated entirely to open green landscapes and pristine pocket parks.Every tower and row house cluster is strategically placed to ensure complete privacy while providing direct, seamless access to the central 40,000 sq.ft. clubhouse and the township's extensive multi-sport zones.",
+  "master_plan_caption": "*Artist's impression for representational purposes only.",
+  "master_plan_highlights": [
+    {
+      "title": "Central 40,000 Sq.Ft. Luxury Clubhouse",
+      "description": ""
+    },
+    {
+      "title": "Carbon Healing Courtyards & Organic Gardens",
+      "description": ""
+    },
+    {
+      "title": "5 Olympic-Inspired Swimming Pool Clusters",
+      "description": ""
+    },
+    {
+      "title": "Dedicated Futsal, Tennis & Squash Arenas",
+      "description": ""
+    },
+    {
+      "title": "Pedestrian-Safe Traffic-Free Walkways",
+      "description": ""
+    }
+  ],
+  "footer_cta_heading": "Get Priority Access.",
+  "footer_cta_subtext": "Be the first to receive exclusive pre-launch pricing, flexible payment plans, and priority tower allocations for this premium development.",
+  "footer_cta_button": "Unlock Priority Access",
+  "rera_status": "",
+  "blog": {
+    "eyebrow": "Insights",
+    "heading": "From the Blog",
+    "subtext": "Guides and perspectives on your new home.",
+    "poster": "",
+    "posts": [
+      {
+        "slug": "why-sarjapur-road-is-east-bangalore-s-most-lucrative-investment-corridor",
+        "category": "Buyers Guide",
+        "date": "July 22, 2026",
+        "read_time": "4 min read",
+        "title": "Why Sarjapur Road is East Bangalore's Most Lucrative Investment Corridor",
+        "excerpt": "An in-depth look at what this project has to offer.",
+        "content": [
+          "Sarjapur Road has transitioned from a quiet suburban stretch into one of East Bangalore’s most dynamic commercial and residential epicenters. Driven by its exceptional physical infrastructure and strategic positioning, this micro-market has become the go-to destination for modern homebuyers and high-net-worth real estate investors alike.The primary catalyst behind this real estate surge is the seamless connectivity the locality offers. Nestled perfectly between the IT hubs of Whitefield, Electronic City, and the Outer Ring Road (ORR), Sarjapur Road allows working professionals to significantly cut down daily commute times. Furthermore, the expansion of the upcoming Metro line and the development of the Peripheral Ring Road (PRR) are set to unlock unprecedented capital appreciation over the next few years.Beyond transit links, the region is highly self-sustaining. It houses premium IT parks such as the RGA Tech Park and the sprawling Wipro Corporate Campus, creating a hyper-local employment ecosystem. Combined with top-tier international schools, multispecialty hospitals, and vibrant retail spaces, investing here guarantees not just exceptional rental yields but an appreciating luxury asset for long-term wealth creation."
+        ],
+        "poster": "https://firebasestorage.googleapis.com/v0/b/masal-502609.firebasestorage.app/o/assetz-63east%2Fblog1_poster-ai-2719f5ed.webp?alt=media&token=7e2ac137-ad4a-4afa-8c9c-3f3ebd3c7fbc"
+      },
+      {
+        "slug": "the-rise-of-eco-luxury-how-carbon-healing-homes-are-redefining-modern-living",
+        "category": "Investment Analysis",
+        "date": "July 22, 2026",
+        "read_time": "3 min read",
+        "title": "The Rise of Eco-Luxury: How Carbon Healing Homes Are Redefining Modern Living",
+        "excerpt": "Technical breakdown and investment prospects.",
+        "content": [
+          "Modern luxury is no longer just about imported marble floors or massive clubhouses; it is defined by the quality of the environment you breathe and live in. As urban spaces grow increasingly congested, a new wave of eco-luxury residential architecture—specifically Carbon Healing Homes—is quietly setting a healthier standard for families in Bangalore.An IGBC Gold-rated eco-luxury development changes how a household interacts with nature. By implementing advanced structural systems like dual-plumbing, high-efficiency fixtures, and integrated rainwater harvesting networks, these sustainable enclaves achieve up to 74% fresh water savings. Furthermore, on-site sewage treatment plants ensure that 100% of the estate's landscaping needs are met using recycled water, creating a zero-waste ecosystem.Living in a green-certified community translates to long-term wellness and lower maintenance overheads. With over 68% of the land area reserved for open green spaces, organic gardens, and pocket parks, residents experience better air quality and natural temperature regulation. Choosing an eco-luxury home means securing a premium lifestyle that preserves both your family’s well-being and the planet’s future."
+        ],
+        "poster": "https://firebasestorage.googleapis.com/v0/b/masal-502609.firebasestorage.app/o/assetz-63east%2Fblog2_poster-ai-a636007f.webp?alt=media&token=71e56f3a-2864-42a8-8147-48b1a4f21da4"
+      }
+    ]
+  }
+}

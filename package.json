@@ -1,0 +1,9 @@
+{
+  "name": "cms-marketing-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "shared",
+    "campaigns/*"
+  ]
+}

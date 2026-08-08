@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-ssr
+*.local
+*.log
+.DS_Store
+.env
+.firebase
+shared-new-tentative-v1
+shared-previous

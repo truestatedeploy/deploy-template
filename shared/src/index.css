@@ -1,0 +1,81 @@
+/* Urbanist + Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchored sections so they aren't hidden behind the fixed navbar */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+body{
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.responsive-map{
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+
+
+
+.responsive-map iframe {
+    border: 0;
+    height: 60vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.custom-gradient {
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--c-hero-overlay, 0 168 90) / 0.78) 0%,
+      rgba(0, 0, 0, 0.90) 100%
+    );
+  }
+
+/* Hero entrance + ambient motion */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-hero-1 { animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
+.animate-hero-2 { animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.animate-hero-3 { animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
+
+@keyframes heroZoom {
+  from { transform: scale(1.12); }
+  to   { transform: scale(1); }
+}
+.animate-hero-zoom { animation: heroZoom 9s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-1, .animate-hero-2, .animate-hero-3, .animate-hero-zoom { animation: none; }
+}
+
+/* Modal entrance */
+@keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalPop {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-modal-fade { animation: modalFade 0.25s ease-out both; }
+.animate-modal-pop  { animation: modalPop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-modal-fade, .animate-modal-pop { animation: none; }
+}
