@@ -1,22 +1,3 @@
 {
-  "hosting": [
-    {
-      "site": "anubhav-testing-one",
-      "public": "campaigns/assetz-63east/dist",
-      "ignore": [
-        "firebase.json",
-        ".firebaserc",
-        "**/.*",
-        "**/node_modules/**",
-        ".github/**",
-        "metadata.json"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    }
-  ]
+  "hosting": []
 }
