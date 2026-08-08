@@ -1,22 +1,3 @@
 {
-  "hosting": [
-    {
-      "site": "test-site",
-      "public": "campaigns/test/dist",
-      "ignore": [
-        "firebase.json",
-        ".firebaserc",
-        "**/.*",
-        "**/node_modules/**",
-        ".github/**",
-        "metadata.json"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    }
-  ]
+  "hosting": []
 }
