@@ -13,11 +13,15 @@ function CheckIcon() {
 }
 
 // Same {value, unit, label} shape used by Features.jsx's stat strip — reused
-// here as the Investment Snapshot card's row list (specs[] falls back to
-// features[] so existing campaigns work without a dedicated snapshot field).
+// here as the Investment Snapshot card's row list. Key Features (features[])
+// is the primary source; specs[] is kept as a fallback for older campaigns
+// that were only ever filled in that way.
 const getSpecs = (config) => {
+  if (Array.isArray(config.features) && config.features.length > 0) {
+    return config.features.map((f) => ({ value: f.value, unit: "", label: f.title }));
+  }
   if (Array.isArray(config.specs) && config.specs.length > 0) return config.specs;
-  const features = config.features?.length > 0 ? config.features : [
+  const features = [
     { title: "Starting Price", value: "₹1.96 Cr" },
     { title: "Configurations", value: "3 & 4 BHK" },
     { title: "Project Size", value: "7.9 Acres" },

@@ -32,9 +32,13 @@ export const Builder = () => {
             {config.builder}
           </h2>
           <p className="font-body text-base md:text-lg text-gray-600 leading-relaxed">
-            Delivering excellence in real estate with a commitment to quality, 
-            innovation, and customer satisfaction. {config.builder} has a proven track 
-            record of developing premium residential spaces that redefine modern living.
+            {config.builder_description || (
+              <>
+                Delivering excellence in real estate with a commitment to quality,
+                innovation, and customer satisfaction. {config.builder} has a proven track
+                record of developing premium residential spaces that redefine modern living.
+              </>
+            )}
           </p>
         </div>
 

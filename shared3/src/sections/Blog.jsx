@@ -16,13 +16,18 @@ export const Blog = () => {
 
   if (!posts.length) return null;
 
+  // The CMS's "Blog Category" dropdown (Connectivity / Investment /
+  // Neighbourhood) writes to blog.nav_tab_name — reuse it as this section's
+  // heading so picking a category actually changes what's shown here.
+  const sectionTitle = blog.nav_tab_name || blog.heading || "Investment Insights";
+
   return (
     <section id="insights" className="py-24 bg-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <div className="text-[11px] font-semibold tracking-[0.2em] uppercase mb-4 text-gray-400">Research</div>
-            <h2 className="text-[32px] md:text-[40px] font-semibold tracking-tight text-ink">Investment Insights</h2>
+            <h2 className="text-[32px] md:text-[40px] font-semibold tracking-tight text-ink">{sectionTitle}</h2>
           </div>
         </div>
 

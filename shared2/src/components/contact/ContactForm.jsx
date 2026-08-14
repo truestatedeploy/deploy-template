@@ -50,7 +50,7 @@ const ContactForm = ({ contactmodal, setContactModal, leadSource }) => {
 
           {/* Image side */}
           <img
-            src={overlaybg}
+            src={config.hero_image || overlaybg}
             alt={config.project_name || "Enquire"}
             className="hidden md:block w-1/2 object-cover"
           />

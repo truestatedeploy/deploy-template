@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { name: "Overview", href: "#overview" },
   { name: "Investment", href: "#investment" },
   { name: "Pricing", href: "#pricing" },
-  { name: "Master Plan", href: "#master-plan" },
   { name: "Location", href: "#location" },
   { name: "Amenities", href: "#amenities" },
   { name: "Gallery", href: "#gallery" },

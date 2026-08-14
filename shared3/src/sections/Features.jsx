@@ -1,8 +1,11 @@
 import { useConfig } from "../ConfigContext";
 
 const getSpecs = (config) => {
+  if (Array.isArray(config.features) && config.features.length > 0) {
+    return config.features.map((f) => ({ value: f.value, unit: "", label: f.title }));
+  }
   if (Array.isArray(config.specs) && config.specs.length > 0) return config.specs;
-  const features = config.features?.length > 0 ? config.features : [
+  const features = [
     { title: "Open Space", value: "68%" },
     { title: "Acres", value: "7.9" },
     { title: "Clubhouse Sq.Ft.", value: "40K" },
@@ -37,10 +40,10 @@ export const Features = () => {
               key={i}
               className="px-6 py-10 text-center border-r border-gray-200 hover:bg-surface transition-colors"
             >
-              <div className="text-[32px] font-semibold leading-none mb-2 text-primary">
+              <div className="text-sm font-semibold text-ink mb-2">{s.label}</div>
+              <div className="text-[32px] font-semibold leading-none text-primary">
                 {s.value}{s.unit ? ` ${s.unit}` : ""}
               </div>
-              <div className="text-sm font-semibold text-ink">{s.label}</div>
             </div>
           ))}
         </div>
