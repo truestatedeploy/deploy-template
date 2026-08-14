@@ -23,6 +23,13 @@ export const Location = () => {
       ? `https://www.openstreetmap.org/export/embed.html?bbox=${Number(config.lng) - 0.03}%2C${Number(config.lat) - 0.01}%2C${Number(config.lng) + 0.03}%2C${Number(config.lat) + 0.01}&layer=mapnik&marker=${config.lat}%2C${config.lng}`
       : "");
 
+  // Prefer the actual link/embed URL entered in the CMS — matches Templates
+  // 1, 2 & 4's behavior — before falling back to a coordinate-built link.
+  const mapsLink =
+    config.maps_link ||
+    config.maps_embed_url ||
+    (config.lat && config.lng ? `https://www.google.com/maps/search/?api=1&query=${config.lat},${config.lng}` : null);
+
   return (
     <section id="location" className="py-24 bg-surface">
       <div className="max-w-[1280px] mx-auto px-6">
@@ -32,16 +39,30 @@ export const Location = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2 aspect-[16/10] rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
-            {mapSrc && (
-              <iframe
-                title={`${config.project_name || "Project"} location`}
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: "grayscale(15%) contrast(0.92) brightness(1.02)" }}
-                loading="lazy"
-                src={mapSrc}
-              />
+          <div className="lg:col-span-2">
+            <div className="aspect-[16/10] rounded-xl overflow-hidden border border-gray-200 bg-gray-200">
+              {mapSrc && (
+                <iframe
+                  title={`${config.project_name || "Project"} location`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: "grayscale(15%) contrast(0.92) brightness(1.02)" }}
+                  loading="lazy"
+                  src={mapSrc}
+                />
+              )}
+            </div>
+            {mapsLink && (
+              <div className="mt-3 text-right">
+                <a
+                  href={mapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs inline-flex items-center gap-1 text-primary hover:opacity-80 transition-opacity"
+                >
+                  Open in Maps ↗
+                </a>
+              </div>
             )}
           </div>
 

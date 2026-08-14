@@ -28,7 +28,7 @@ const StatBox = ({ label, value }) => (
     <p className="font-detail text-[11px] md:text-xs font-semibold uppercase tracking-widest text-gray-500">
       {label}
     </p>
-    <p className="mt-2 font-display text-2xl md:text-[1.75rem] font-medium text-gray-900">
+    <p className="mt-2 font-display text-3xl md:text-4xl font-medium text-gray-900">
       {value}
     </p>
   </div>
@@ -128,7 +128,7 @@ const Pricing = ({ openContactModal }) => {
               {unit.type}
             </h2>
             {unit.label && (
-              <span className="font-detail text-xs md:text-sm font-semibold uppercase tracking-widest text-gray-500">
+              <span className="font-detail text-xs md:text-sm font-semibold uppercase tracking-widest text-gray-600 bg-gray-100 rounded-full px-3 py-1">
                 {unit.label}
               </span>
             )}
@@ -140,7 +140,7 @@ const Pricing = ({ openContactModal }) => {
           )}
 
           <div className="mt-6 grid grid-cols-2 gap-4">
-            <StatBox label="Carpet Area" value={unit.size} />
+            <StatBox label="Size" value={unit.size} />
             <StatBox label="Price" value={unit.price} />
           </div>
 
