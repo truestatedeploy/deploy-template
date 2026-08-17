@@ -106,8 +106,7 @@ export const StickyEnquiry = ({ show }) => {
       {showOtpModal && enquiryInfo && (
         <OtpModal
           phoneNumber={enquiryInfo.phone}
-          enquiryId={enquiryInfo.enquiryId}
-          enquiryCollection={enquiryInfo.enquiryCollection}
+          leadPath={enquiryInfo.leadPath}
           onVerified={() => setShowOtpModal(false)}
           onSkip={() => setShowOtpModal(false)}
         />
