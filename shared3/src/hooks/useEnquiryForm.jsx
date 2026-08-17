@@ -23,12 +23,25 @@ const leadsCollectionName = (config) =>
 function getUTMParams() {
   if (typeof window === "undefined") return {};
   const params = new URLSearchParams(window.location.search);
+
+  // Read BOTH spellings. Google Ads, Meta and every standard tracking link use
+  // snake_case (?utm_source=), which is checked first; camelCase is kept as a
+  // fallback for older hand-built links that used it.
+  const read = (snake, camel) => params.get(snake) || params.get(camel) || "";
+
+  const source = read("utm_source", "utmSource");
+  const gclid = read("gclid", "gclid");
+  const fbclid = read("fbclid", "fbclid");
+
   return {
-    utmSource: params.get("utmSource") || "",
-    utmMedium: params.get("utmMedium") || "",
-    utmCampaign: params.get("utmCampaign") || "",
-    utmKeyword: params.get("utmKeyword") || "",
-    gclid: params.get("gclid") || "",
+    // Auto-tagged ad clicks often carry ONLY a click id and no utm_source —
+    // Google Ads sends gclid, Meta sends fbclid. Inferring the channel from
+    // those means such visits are attributed instead of silently "Direct".
+    utmSource: source || (gclid ? "google" : fbclid ? "meta" : ""),
+    utmMedium: read("utm_medium", "utmMedium"),
+    utmCampaign: read("utm_campaign", "utmCampaign"),
+    utmKeyword: read("utm_term", "utmKeyword"),
+    gclid,
   };
 }
 
