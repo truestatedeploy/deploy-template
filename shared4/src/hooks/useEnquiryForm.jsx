@@ -5,10 +5,20 @@ import { FormAlert } from "../components/contact/FormAlert";
 import { useLeadTracking, LEAD_SOURCES } from "./useLeadTracking";
 import { markLeadCaptured } from "./useLeadCapture";
 import { useConfig } from "../ConfigContext";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
 
-// Endpoint that records a campaign enquiry and returns the OTP enquiry handle.
-const ENQUIRY_ENDPOINT =
-  "https://canvas-homes-campaign-service-test-dot-canvas-homes-497109.el.r.appspot.com/handleMultipleCampaignData";
+// Leads are written straight into Firestore from the visitor's browser — there
+// is no backend in this path. Firestore Security Rules are what validate the
+// write (see automarketCMS-test/firestore.rules), which is why the shape below
+// must match the field list those rules allow, exactly.
+//
+// One top-level collection per campaign, named "{client_id}_{campaign_id}".
+// Both values are baked into campaign.config.json at deploy time by the CMS.
+// "legacy" mirrors the fallback used elsewhere for campaigns that live in the
+// shared monorepo rather than a client's own repo.
+const leadsCollectionName = (config) =>
+  `${config.client_id || "legacy"}_${config.campaign_id || "unknown"}`;
 
 function getUTMParams() {
   if (typeof window === "undefined") return {};
@@ -108,37 +118,36 @@ export const useEnquiryForm = ({ leadSource } = {}) => {
       <FormAlert message="Submitting form..." onClose={() => setAlert(null)} />
     );
 
-    const payload = {
+    // Field-for-field what the Security Rules permit. `verified` starts false
+    // and can only be flipped by OtpModal after a real phone-OTP sign-in — the
+    // rules reject a create that arrives pre-verified.
+    const lead = {
       name: name.trim().toLowerCase(),
-      phoneNumber: number.trim(),
-      campaign: true,
-      projectId: "",
-      projectName: config.project_name || "",
-      currentAgent: "unknown",
-      property_type: "primary",
-      lead_type: "demand",
-      utmDetails: {
+      phone: number.trim(),
+      email: "",
+      client_id: config.client_id || "legacy",
+      campaign_id: config.campaign_id || "unknown",
+      campaign_name: config.project_name || "",
+      source: leadSource?.source || LEAD_SOURCES.UNKNOWN,
+      property_type: leadSource?.propertyType || "",
+      page_url: typeof window !== "undefined" ? window.location.href : "",
+      utm: {
         source: utmParams.utmSource || null,
         medium: utmParams.utmMedium || null,
         campaign: utmParams.utmCampaign || null,
         keyword: utmParams.utmKeyword || null,
         gclid: utmParams.gclid || null,
       },
+      verified: false,
+      verified_at: null,
+      quality: "unassigned",
+      // Must be the server's clock — the rules require created_at == request.time,
+      // so a client-side Date() here would be rejected outright.
+      created_at: serverTimestamp(),
     };
 
     try {
-      const response = await fetch(ENQUIRY_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log("Success:", result);
+      const ref = await addDoc(collection(db, leadsCollectionName(config)), lead);
 
       // Details handed over → stop the recurring popup & unlock the chatbot.
       markLeadCaptured();
@@ -154,9 +163,10 @@ export const useEnquiryForm = ({ leadSource } = {}) => {
       setName("");
       setNumber("");
 
+      // The doc's own path is all OtpModal needs to mark it verified — it works
+      // the same regardless of which collection the lead landed in.
       setEnquiryInfo({
-        enquiryId: result.enquiryId,
-        enquiryCollection: result.enquiryCollection,
+        leadPath: ref.path,
         phone: number,
       });
       setShowOtpModal(true);

@@ -15,7 +15,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// Named database — our data lives in "autowebsite", NOT the (default)
+// database that getFirestore(app) would otherwise resolve to.
+const db = getFirestore(app, "autowebsite");
 const auth = getAuth(app);
 
 export { db, auth };

@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { doc, updateDoc, serverTimestamp } from "firebase/firestore";
 import { Xmark } from "iconoir-react";
 
-const API_BASE = "https://canvas-homes-campaign-service-test-dot-canvas-homes-497109.el.r.appspot.com";
-
-const OtpModal = ({ phoneNumber, enquiryId, enquiryCollection, onVerified, onSkip }) => {
+// `leadPath` is the full Firestore path of the lead this modal is verifying
+// (e.g. "CL0001_serene-heights/abc123"), handed over by useEnquiryForm. Using a
+// path rather than an id keeps this component agnostic about how lead
+// collections are named.
+const OtpModal = ({ phoneNumber, leadPath, onVerified, onSkip }) => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [confirmationResult, setConfirmationResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -104,13 +107,15 @@ const OtpModal = ({ phoneNumber, enquiryId, enquiryCollection, onVerified, onSki
     try {
       await confirmationResult.confirm(code);
 
-      const res = await fetch(`${API_BASE}/update-verification`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ enquiryId, enquiryCollection }),
-      });
-
-      if (!res.ok) throw new Error("Verification update failed");
+      // Confirming the code signs this browser in as that phone number, which
+      // is exactly what the Security Rules check: only the holder of the number
+      // on the lead may flip it to verified, and only these two fields.
+      if (leadPath) {
+        await updateDoc(doc(db, leadPath), {
+          verified: true,
+          verified_at: serverTimestamp(),
+        });
+      }
 
       clearRecaptcha();
       onVerified();
