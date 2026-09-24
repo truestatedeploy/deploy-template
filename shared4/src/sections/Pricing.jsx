@@ -45,7 +45,7 @@ const Pricing = ({ openContactModal }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border border-gray-200">
-          <div className="bg-gray-200" style={{ aspectRatio: "4/3", minHeight: "280px" }}>
+          <div className="bg-gray-200 w-full aspect-[4/3] md:min-h-[280px]">
             <img src={image} alt={`${unit.type} interior`} className="w-full h-full object-cover" />
           </div>
           <div className="bg-white p-8 md:p-12 flex flex-col justify-center">

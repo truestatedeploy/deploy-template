@@ -31,7 +31,7 @@ export const Location = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="md:col-span-2">
-            <div className="rounded-2xl overflow-hidden bg-gray-200" style={{ minHeight: "300px", aspectRatio: "16/10" }}>
+            <div className="rounded-2xl overflow-hidden bg-gray-200 w-full aspect-[4/3] md:aspect-[16/10] md:min-h-[300px]">
               {mapSrc && (
                 <iframe
                   title={`${config.project_name || "Project"} location`}

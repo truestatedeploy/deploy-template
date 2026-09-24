@@ -58,11 +58,11 @@ jobs:
           done || true)
 
           # Did shared code or the workspace root change? -> rebuild everything.
-          # `shared` and `shared2` are both template packages consumed by
-          # campaigns (selected per-campaign via campaign.config.json's
-          # `template` field), so a change to either must rebuild all campaigns.
+          # Every shared* folder is a template package consumed by campaigns
+          # (selected per-campaign via campaign.config.json's `template` field),
+          # so a change to any of them must rebuild all campaigns.
           GLOBAL_CHANGE=""
-          if echo "$CHANGED" | grep -qE '^(shared/|shared2/|package\.json$|package-lock\.json$)'; then
+          if echo "$CHANGED" | grep -qE '^(shared[0-9]*/|package\.json$|package-lock\.json$)'; then
             GLOBAL_CHANGE="yes"
             echo "Shared/root changed -> rebuilding ALL campaigns."
           fi
