@@ -71,15 +71,15 @@ export const Navbar = ({ sitevisitmodal, setSiteVisitModal, setContactModal }) =
   return (
       <div className="font-body fixed w-full z-20 top-0 start-0 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <Banner setContactModal={setContactModal} />
-        <div className="w-full px-5 md:px-[7.5rem] flex flex-wrap items-center justify-between py-[8px] z-40 ">
+        <div className="w-full px-[clamp(1.25rem,5vw,7.5rem)] flex flex-wrap items-center justify-between py-[8px] z-40 ">
           {/* Logo Section */}
           <a
             href="/"
-            className="flex items-center px-4 md:p-0 space-x-3 rtl:space-x-reverse"
+            className="flex items-center md:p-0 space-x-3 rtl:space-x-reverse"
           >
             <img
               src={config.logo_image || defaultLogo}
-              className="h-10 sm:h-12 md:h-14"
+              className="h-9 sm:h-[clamp(3rem,5vw,5rem)] max-w-[260px] object-contain"
               alt={config.builder || config.project_name}
             />
           </a>
@@ -88,7 +88,7 @@ export const Navbar = ({ sitevisitmodal, setSiteVisitModal, setContactModal }) =
           <div className="lg:hidden flex items-center gap-2">
             <a
               href={`tel:${config.phone || '+919739155677'}`}
-              className="flex items-center bg-magenta text-white font-semibold text-sm px-4 py-2 rounded-lg shadow-md active:bg-magentaDark transition-colors duration-300"
+              className="flex items-center bg-magenta text-white font-semibold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg shadow-md active:bg-magentaDark transition-colors duration-300"
             >
               <Phone className="w-5 h-5 mr-2" />{(config.phone || '+919739155677').replace('+91', '')}
             </a>
@@ -119,7 +119,7 @@ export const Navbar = ({ sitevisitmodal, setSiteVisitModal, setContactModal }) =
             id="navbar-sticky"
             onClick={() => setIsMobileNavOpen(false)}
           >
-            <ul className="flex flex-col p-4 md:p-0 md:flex-row gap-1 md:gap-8 lg:gap-10 w-full justify-between md:items-center">
+            <ul className="flex flex-col p-4 md:p-0 md:flex-row gap-1 md:gap-[clamp(0.75rem,2vw,2.5rem)] w-full justify-between md:items-center">
               {navLinks.map((link, index) => {
                 const linkClass =
                   "block border-b md:border-0 border-gray-100 py-3 md:py-0 font-semibold text-sm md:text-xs lg:text-sm uppercase tracking-wider text-gray-800 hover:text-magenta transition-colors duration-300";

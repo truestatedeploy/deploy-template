@@ -18,18 +18,16 @@ export const MasterPlan = ({ openContactModal }) => {
         </div>
 
         {config.master_plan_image && (
-          <div className="rounded-2xl overflow-hidden mb-8 w-full bg-gray-200" style={{ aspectRatio: "16/7" }}>
-            <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
-              <img src={config.master_plan_image} alt={`${config.project_name} master plan`} className="w-full h-full object-cover opacity-80" />
-              {config.master_plan_caption && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="rounded-xl px-6 py-4 text-center bg-white/90 backdrop-blur-sm">
-                    <p className="text-xs tracking-widest uppercase mb-1 text-ink/60">Site Plan</p>
-                    <p className="text-xl font-semibold text-ink font-display">{config.master_plan_caption}</p>
-                  </div>
+          <div className="rounded-2xl overflow-hidden mb-8 w-full bg-white relative">
+            <img src={config.master_plan_image} alt={`${config.project_name} master plan`} className="w-full h-auto block" />
+            {config.master_plan_caption && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="rounded-xl px-6 py-4 text-center bg-white/90 backdrop-blur-sm">
+                  <p className="text-xs tracking-widest uppercase mb-1 text-ink/60">Site Plan</p>
+                  <p className="text-xl font-semibold text-ink font-display">{config.master_plan_caption}</p>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         )}
 

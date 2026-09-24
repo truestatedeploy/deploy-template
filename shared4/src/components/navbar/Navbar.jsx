@@ -31,15 +31,15 @@ export const Navbar = ({ openContactModal }) => {
       }`}
     >
       <div className="max-w-[1280px] mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 flex-shrink-0">
+        <a href="/" className="flex items-center gap-3 min-w-0">
           {config.logo_image ? (
-            <img src={config.logo_image} alt={config.builder || config.project_name} className="h-10 w-10 object-contain rounded-md" />
+            <img src={config.logo_image} alt={config.builder || config.project_name} className="h-10 w-10 object-contain rounded-md flex-shrink-0" />
           ) : (
-            <div className="w-10 h-10 rounded-md flex items-center justify-center text-white text-base font-bold bg-primary">
+            <div className="w-10 h-10 rounded-md flex items-center justify-center text-white text-base font-bold bg-primary flex-shrink-0">
               {initial}
             </div>
           )}
-          <span className="text-lg font-semibold tracking-tight text-ink font-display">
+          <span className="text-base md:text-lg font-semibold tracking-tight text-ink font-display truncate">
             {config.project_name || "Project Name"}
           </span>
         </a>
@@ -96,6 +96,15 @@ export const Navbar = ({ openContactModal }) => {
                 {l.name}
               </a>
             ))}
+            {config.phone && (
+              <a
+                href={`tel:${config.phone}`}
+                className="flex items-center gap-2 text-sm font-medium text-ink"
+                onClick={() => setOpen(false)}
+              >
+                <Phone className="w-4 h-4" /> {config.phone}
+              </a>
+            )}
             <button
               onClick={() => { setOpen(false); openContactModal(); }}
               className="w-full py-3 rounded-full text-sm font-medium mt-2 text-white bg-primary"
